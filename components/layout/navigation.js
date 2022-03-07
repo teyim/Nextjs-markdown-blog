@@ -17,7 +17,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                         <span className=" hover:font-semibold hover:underline  text-xl font-medium text-gray-800"><Link href="/articles" >All posts</Link></span>
                     </li>
                     <li>
-                        <button className="hover:font-semibold  text-xl font-medium text-gray-800 px-4 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLineCap="round" strokeLineJoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <button className="hover:font-semibold  text-xl font-medium text-gray-800 px-4 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
                         {showDropDown && (
                             <div className=" font-semibold text-gray-600 absolute bg-white  z-50 list-none divide-y divide-gray-100 rounded-md w-[200px]  shadow-xl my-4 animate-fade-in-down" >
                                 <ul className="py-1" >
@@ -87,7 +87,7 @@ const Navigation = () => {
                             <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700" onClick={() => setMenuOpen(!menuOpen)}><Link href="/articles" >All posts</Link></span>
                         </li>
                         <li className='my-4'>
-                            <button className="font-bold  text-xl  text-gray-800 px-8 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLineCap="round" strokeLineJoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
+                            <button className="hover:font-semibold  text-xl font-medium text-gray-800 px-4 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
                             {showDropDown && (
                                 <div className="font-semibold text-gray-600 z-50 list-none divide-y divide-gray-100 rounded-md w-full  my-4 animate-fade-in-down" >
                                     <ul className="py-1" >
