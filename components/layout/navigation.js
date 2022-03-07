@@ -23,26 +23,26 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                                 <ul className="py-1" >
                                     <li>
 
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >React js </Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >React js </Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >React Native</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >React Native</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >Vanilla js</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Vanilla js</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100 block px-6 py-2"><Link href="/" >Next js</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100 block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Next js</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >Typescript</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Typescript</Link></span>
                                     </li>
                                 </ul>
                             </div>
                         )}
                     </li>
                     <li>
-                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800"><Link href="/about" >About</Link></span>
+                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800" onClick={toggleDropDown}><Link href="/about" >About</Link></span>
                     </li>
             </ul>
             <div className="justify-evenly w-1/6 my-auto hidden md:flex">
@@ -84,7 +84,7 @@ const Navigation = () => {
                 <MobileMenu>
                     <ul className='list-none '>
                         <li className='my-4'>
-                            <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700"><Link href="/articles" >All posts</Link></span>
+                            <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700" onClick={() => setMenuOpen(!menuOpen)}><Link href="/articles" >All posts</Link></span>
                         </li>
                         <li className='my-4'>
                             <button className="font-bold  text-xl  text-gray-800 px-8 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLineCap="round" strokeLineJoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -92,25 +92,25 @@ const Navigation = () => {
                                 <div className="font-semibold text-gray-600 z-50 list-none divide-y divide-gray-100 rounded-md w-full  my-4 animate-fade-in-down" >
                                     <ul className="py-1" >
                                         <li>
-                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >React js </Link></span>
+                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => setMenuOpen(!menuOpen)}><Link href="/" >React js </Link></span>
                                         </li>
-                                        <li>
-                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >React Native</Link></span>
+                                        <li >
+                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => setMenuOpen(!menuOpen)}><Link href="/" >React Native</Link></span>
                                         </li>
-                                        <li>
-                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >Vanilla js</Link></span>
+                                        <li >
+                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => setMenuOpen(!menuOpen)}><Link href="/" >Vanilla js</Link></span>
                                         </li>
-                                        <li>
-                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2"><Link href="/" >Next js</Link></span>
+                                        <li >
+                                            <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => setMenuOpen(!menuOpen)}><Link href="/" >Next js</Link></span>
                                         </li>
-                                        <li>
-                                            <span className=" text-lg hover:bg-gray-100 text-gray-700 block px-6 py-2"><Link href="/" >Typescript</Link></span>
+                                        <li >
+                                            <span className=" text-lg hover:bg-gray-100 text-gray-700 block px-6 py-2" onClick={() => setMenuOpen(!menuOpen)}><Link href="/" >Typescript</Link></span>
                                         </li>
                                     </ul>
                                 </div>
                             )}
                         </li>
-                        <li className='my-4'>
+                        <li className='my-4' onClick={() => setMenuOpen(!menuOpen)}>
                             <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700"><Link href="/about" >About</Link></span>
                         </li>
                     </ul>
