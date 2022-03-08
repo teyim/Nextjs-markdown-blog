@@ -14,7 +14,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
         {!menuOpen && (<>
             <ul className=" justify-evenly w-2/4 my-auto hidden md:flex" >
                     <li>
-                        <span className=" hover:font-semibold hover:underline  text-xl font-medium text-gray-800"><Link href="/articles" >All posts</Link></span>
+                        <span className=" hover:font-semibold hover:underline  text-xl font-medium text-gray-800"><Link href="/posts" >All posts</Link></span>
                     </li>
                     <li>
                         <button className="hover:font-semibold  text-xl font-medium text-gray-800 px-4 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -42,7 +42,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                         )}
                     </li>
                     <li>
-                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800" onClick={toggleDropDown}><Link href="/about" >About</Link></span>
+                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800" ><Link href="/about" >About</Link></span>
                     </li>
             </ul>
             <div className="justify-evenly w-1/6 my-auto hidden md:flex">
@@ -84,7 +84,7 @@ const Navigation = () => {
                 <MobileMenu>
                     <ul className='list-none '>
                         <li className='my-4'>
-                            <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700" onClick={() => setMenuOpen(!menuOpen)}><Link href="/articles" >All posts</Link></span>
+                            <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700" onClick={() => setMenuOpen(!menuOpen)}><Link href="/posts" >All posts</Link></span>
                         </li>
                         <li className='my-4'>
                             <button className="hover:font-semibold  text-xl font-medium text-gray-800 px-4 text-center inline-flex items-center " type="button" onClick={toggleDropDown} >Topics<svg className="w-4 h-4 ml-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -110,7 +110,7 @@ const Navigation = () => {
                                 </div>
                             )}
                         </li>
-                        <li className='my-4' onClick={() => setMenuOpen(!menuOpen)}>
+                        <li className='my-4'>
                             <span className=" hover:text-black hover:underline focus:underline text-xl font-bold text-gray-700"><Link href="/about" >About</Link></span>
                         </li>
                     </ul>
