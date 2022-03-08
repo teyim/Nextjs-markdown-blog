@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowDown } from 'react-icons/ai'
-import ArticleList from "../components/articles/article-list";
+import PostList from "../components/posts/post-list";
+
 
 
 export default function Home() {
+
   return (
     <>
-      <header className="w-full md:py-8 md:px-14 font-Rubik text-gray-800 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-8">
+      <header className="w-full md:py-8 md:px-14 font-Rubik text-gray-800 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-8 animate-fade-in-down">
 
         <div className="h-auto md:my-6  rounded-2xl shadow-lg py-8 px-4 md:px-12  bg-black text-center ">
           <h1 className="text-white font-Bai font-semibold text-6xl">Learn web development with well explained articles.</h1>
@@ -22,7 +24,7 @@ export default function Home() {
           <div className="w-full md:py-6 md:px-14">
             <h1 className="font-Bai text-2xl font-bold ">Popular Articles</h1>
           </div>
-          <ArticleList></ArticleList>
+
         </div>
       </div>
 
