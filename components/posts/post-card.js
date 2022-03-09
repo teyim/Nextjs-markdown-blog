@@ -12,7 +12,7 @@ function PostCard({ post }) {
         year: 'numeric',
     });
 
-    const imagePath = `/images/posts/${image}`;
+    const imagePath = `/images/posts/${slug}/${image}`;
     const linkPath = `/posts/${slug}`;
 
     return (
@@ -29,19 +29,8 @@ function PostCard({ post }) {
                             <h3 className="text-xl font-semibold text-center">{formattedDate}</h3>
                         </div>
                         <div className="flex justify-evenly font-medium my-4">
-                            <h2 className="px-2 bg-red-200 rounded-lg">{topic}</h2>
-                            <h2>{readTime} read</h2>
-                        </div>
-
-                        <div className="flex justify-evenly">
-                            <div className="flex  px-2">
-                                <AiOutlineLike className='w-5 h-5 mr-1 text-gray-700' />
-                                <h5>11 likes</h5>
-                            </div>
-                            <div className="flex ">
-                                <GoComment className='w-5 h-5 mr-1 text-gray-700' />
-                                <h5>11 comments</h5>
-                            </div>
+                            <h3 className='text-base px-2  border bg-slate-100 border-slate-300 inline rounded-lg '>{topic}</h3>
+                            <h2 className='text-lg'>{readTime} read</h2>
                         </div>
                     </div>
                 </div>
