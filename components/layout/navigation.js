@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import React, { useState } from 'react';
 import { AiOutlineTwitter, AiOutlineGithub } from 'react-icons/ai'
+import { useRouter } from 'next/router';
 
 
 const Navbar = ({ menuOpen, setMenuOpen }) => {
+    const router = useRouter();
     const [showDropDown, setshowDropDown] = useState(false)
     const toggleDropDown = () => {
         setshowDropDown(!showDropDown)
     }
+
+    const handleRoute = (topicName) => {
+        toggleDropDown();
+        router.push(`/topics/${topicName}`)
+    }
+
     return (
     <nav className="flex justify-between align-middle text-lg ">
             <span className="font-Bai font-extrabold text-2xl"><Link href='/' passHref>Teyim A.</Link></span>
@@ -23,19 +31,19 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                                 <ul className="py-1" >
                                     <li>
 
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >React js </Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => handleRoute('react-js')}><Link href="/" >React js </Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >React Native</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => handleRoute('react-native')}><Link href="/" >React Native</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Vanilla js</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => handleRoute('vanilla-js')}><Link href="/" >Vanilla js</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100 block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Next js</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100 block px-6 py-2" onClick={() => handleRoute('next-js')}><Link href="/" >Next js</Link></span>
                                     </li>
                                     <li>
-                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={toggleDropDown}><Link href="/" >Typescript</Link></span>
+                                        <span className=" text-lg hover:bg-gray-100  block px-6 py-2" onClick={() => handleRoute('typescript')}><Link href="/" >Typescript</Link></span>
                                     </li>
                                 </ul>
                             </div>
@@ -58,7 +66,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
 };
 
 const MobileMenu = ({ children }) => (
-    <nav className=" text-center flex flex-col space-y-3 md:hidden bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200">
+    <nav className=" text-center flex flex-col space-y-3 md:hidden ">
         {children}
     </nav>
 );
@@ -78,7 +86,7 @@ const Navigation = () => {
         setshowDropDown(!showDropDown)
     }
     return (
-        <div className='top-0 z-10 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-4 font-Bai w-full md:py-8 md:px-14  '>
+        <div className='top-0 z-10 px-8 py-4 font-Bai w-full md:py-8 md:px-14  border-b border-gray-700'>
             <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             {menuOpen &&
                 <MobileMenu>
