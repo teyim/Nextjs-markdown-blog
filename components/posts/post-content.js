@@ -3,11 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BsArrowLeft } from 'react-icons/bs'
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import LikeButton from '../ui/like-button';
 
 
+SyntaxHighlighter.registerLanguage('js', js);
 
 function PostContent({ postData }) {
 
