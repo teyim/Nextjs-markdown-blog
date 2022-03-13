@@ -17,7 +17,8 @@ function PostCard({ post }) {
 
     return (
         <>
-            <Link href={linkPath} passHref>
+            <Link href={linkPath} >
+                <a>
                 <div className="my-2 md:flex  w-[600px] overflow-hidden border rounded-lg border-gray-500 py-6 px-6 hover:shadow-sm hover:bg-slate-200 hover:cursor-pointer hover:border-slate-600">
                     <div className="md:w-7/12 text-center md:text-left">
                         <h1 className="font-Bai text-2xl font-bold">{title}</h1>
@@ -34,6 +35,7 @@ function PostCard({ post }) {
                         </div>
                     </div>
                 </div>
+                </a>
             </Link>
         </>
     )
