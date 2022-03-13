@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PostContent from '../../components/posts/post-content'
 import { getPostData, getPostsFiles } from '../../helpers/posts-utils'
 
@@ -27,7 +27,7 @@ export const getStaticPaths = () => {
     const postsFileNames = getPostsFiles()
     const postsSlugs = postsFileNames.map((fileName) => fileName.replace(/\.md$/, ''))
     return {
-        paths: postsSlugs.map((slug) => ({ params: { slug: slug } })),
-        fallback: true
+        paths: postsSlugs.map((slug) => ({ params: { slug } })),
+        fallback: false
     }
 }
