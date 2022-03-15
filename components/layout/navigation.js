@@ -129,8 +129,8 @@ const Navigation = () => {
                     </ul>
                     <hr className='text-black border border-gray-800' />
                     <div className="flex justify-evenly w-1/4 md:w-1/6 my-auto  mx-auto">
-                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800"><Link href="/" passHref><a><AiOutlineTwitter className='w-7 h-7 my-auto mx-1' /></a></Link></span>
-                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800"><Link href="/" passHref><a><AiOutlineGithub className='w-7 h-7 my-auto mx-1' /></a></Link></span>
+                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800"><a href='https://twitter.com/asofex'><AiOutlineTwitter className='w-7 h-7 my-auto mx-1' /></a></span>
+                        <span className=" hover:font-semibold hover:underline text-xl font-medium text-gray-800"><a href='https://github.com/teyim/Nextjs-markdown-blog'><AiOutlineGithub className='w-7 h-7 my-auto mx-1' /></a></span>
                     </div>
                 </MobileMenu>}
         </div>
