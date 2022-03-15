@@ -14,7 +14,6 @@ SyntaxHighlighter.registerLanguage('js', js);
 function PostContent({ postData }) {
 
     const { title, image, date, slug, readTime, topic, content, updated } = postData;
-    console.log(content)
 
     const formattedDate = new Date(date).toLocaleDateString('en-US', {
         day: 'numeric',
@@ -82,7 +81,7 @@ function PostContent({ postData }) {
                             <h2 className='text-lg font-semibold font-Bai text-center text-gray-500'>Last updated</h2>
                             <h2 className='text-xl font-semibold font-Bai text-center '>{formattedDate}</h2>
                         </div>
-                        <LikeButton />
+                        <LikeButton postSlug={slug} />
                     </div>
             </div>
         </div >

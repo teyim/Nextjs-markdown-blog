@@ -14,3 +14,31 @@ export async function insertDocument(client, collection, document) {
 
     return result;
 }
+
+export async function updateDocument(client, collection, document, likes) {
+    const db = client.db();
+
+    const updateDocument = {
+        $set: {
+            likes: likes + 1,
+        },
+    };
+    const result = await db.collection(collection).updateOne(document, updateDocument);
+
+    return result;
+}
+
+export async function getPostsData(client, collection, document) {
+    const db = client.db();
+
+    const query = document;
+
+    const options = {
+
+        projection: { likes: 1 },
+    };
+
+    const postData = await db.collection(collection).findOne(query, options);
+
+    return postData;
+}
