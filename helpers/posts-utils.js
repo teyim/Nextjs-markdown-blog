@@ -37,3 +37,38 @@ export function getAllPosts() {
 
     return sortedPosts;
 }
+
+export function getPostByTopic(topic) {
+    const postFiles = getPostsFiles();
+
+    const allPosts = postFiles.map(postFile => {
+        return getPostData(postFile);
+    });
+
+    const filteredPosts = allPosts.filter(post => post.topic === topic);
+
+    return filteredPosts;
+}
+
+
+export function getLatestPosts() {
+    const postFiles = getPostsFiles();
+
+    const allPosts = postFiles.map(postFile => {
+        return getPostData(postFile);
+    });
+
+    const dateOfToday = new Date()
+    const twoMonthsAgo = dateOfToday.getMonth() - 2
+
+    const latestPost = allPosts.filter(post => {
+        const postDate = new Date(post.date)
+        if (postDate >= twoMonthsAgo) {
+            return true
+        }
+    })
+
+    const sortedPosts = latestPost.sort((postA, postB) => postA.date > postB.date ? -1 : 1);
+
+    return sortedPosts;
+}
