@@ -2,14 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import PostList from "../components/posts/post-list";
+import { getLatestPosts } from "../helpers/posts-utils";
 
 
 
-export default function Home() {
+export default function Home({ posts }) {
 
   return (
     <>
-      <header className="w-full md:py-8 md:px-14 font-Rubik text-gray-800  py-8 animate-fade-in-down">
+      <header className="w-full md:py-8 md:px-14 font-Rubik text-gray-800  py-8 animate-fade-in-down border-b border-black">
 
         <div className="h-auto md:my-6  rounded-2xl shadow-lg py-8 px-4 md:px-12  bg-black text-center ">
           <h1 className="text-white font-Bai font-semibold text-6xl">Learn web development with well explained articles.</h1>
@@ -19,16 +20,19 @@ export default function Home() {
       </header>
 
       <div className="w-full font-Rubik text-gray-800 ">
-
-        <div className="max-w-screen-2xl flex flex-wrap  overflow-hidden  justify-evenly  p-8">
-          <div className="w-full md:py-6 md:px-14">
-            <h1 className="font-Bai text-2xl font-bold ">Latest Articles</h1>
-          </div>
-
-        </div>
+        <PostList posts={posts} heading='Latest Articles' />
       </div>
 
 
     </>
   )
+}
+
+export const getStaticProps = () => {
+  const data = getLatestPosts();
+  return {
+    props: {
+      posts: data
+    }
+  }
 }
