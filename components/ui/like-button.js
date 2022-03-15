@@ -8,7 +8,12 @@ function LikeButton({ postSlug }) {
     const [animating, setAnimating] = useState(false)
 
     useEffect(() => {
-        fetch(`/api/posts/${postSlug}`).then((response) => response.json()).then(response => setlikes(response.likes))
+        try {
+            fetch(`/api/posts/${postSlug}`).then((response) => response.json()).then(response => setlikes(response.likes)) 
+        } catch (error) {
+            console.log(error)
+        }
+
     }, [])
 
     const handleLike = () => {
@@ -21,16 +26,12 @@ function LikeButton({ postSlug }) {
         }).then((response) => {
             if (response.status === 201) {
                 try {
-                    fetch(`/api/posts/${postSlug}`).then((response) => response.json())
-                        .then(response => {
-                            setlikes(response.likes)
-                            setAnimating(true)
-                        })
+                    setlikes(likes + 1)
+                    setAnimating(true)
                     setIsLikeLimitReached(true)
                 } catch (error) {
                     console.log(error)
                 }
-
             }
         })
 
