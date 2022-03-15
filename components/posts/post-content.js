@@ -5,17 +5,27 @@ import { BsArrowLeft } from 'react-icons/bs'
 import ReactMarkdown from 'react-markdown';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import LikeButton from '../ui/like-button';
 
 
 SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('html', jsx);
+SyntaxHighlighter.registerLanguage('css', css);
 
 function PostContent({ postData }) {
 
-    const { title, image, date, slug, readTime, topic, content, updated } = postData;
+    const { title, image, date, slug, readTime, topic, content, updatedDate } = postData;
 
     const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    });
+
+    const formattedUpdatedDate = new Date(updatedDate).toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
@@ -79,7 +89,7 @@ function PostContent({ postData }) {
                     <div className='flex flex-col md:flex-row items-center md:justify-between  md:my-4 my-2 py-4 px-8'>
                         <div>
                             <h2 className='text-lg font-semibold font-Bai text-center text-gray-500'>Last updated</h2>
-                            <h2 className='text-xl font-semibold font-Bai text-center '>{formattedDate}</h2>
+                            <h2 className='text-xl font-semibold font-Bai text-center '>{updatedDate ? formattedUpdatedDate : formattedDate}</h2>
                         </div>
                         <LikeButton postSlug={slug} />
                     </div>
