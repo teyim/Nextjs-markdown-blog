@@ -19,7 +19,7 @@ function PostCard({ post }) {
         <>
             <Link href={linkPath} >
                 <a>
-                <div className="my-2 md:flex  w-[600px] overflow-hidden border rounded-lg border-gray-500 py-6 px-6 hover:shadow-sm hover:bg-slate-200 hover:cursor-pointer hover:border-slate-600">
+                    <div className="my-2 md:flex w-11/12 md:w-[600px] overflow-hidden border rounded-lg border-gray-500 py-6 px-6 hover:shadow-sm hover:bg-slate-200 hover:cursor-pointer hover:border-slate-600 mx-auto">
                     <div className="md:w-7/12 text-center md:text-left">
                         <h1 className="font-Bai text-2xl font-bold">{title}</h1>
                         <h3 className="text-gray-600 my-2 text-lg">{excerpt}</h3>
