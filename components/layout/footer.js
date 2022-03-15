@@ -17,7 +17,7 @@ function Footer() {
                 <div className="flex flex-col items-center md:items-end md:w-1/5 p-2  ">
                     <h2 className="font-medium text-xl text-gray-300 my-2">Links</h2>
                     <div className='flex justify-evenly w-full md:w-1/5 md:flex-col md:text-right'>
-                        <span className="text-lg text-gray-500 hover:text-white"><a href='' >RSS</a></span>
+                        <span className="text-lg text-gray-500 hover:text-white"><a href='https://markdown-blog-ten-beta.vercel.app/rss.xml'>RSS</a></span>
                         <span className="text-lg text-gray-500 hover:text-white"><a href='https://github.com/teyim/Nextjs-markdown-blog' >Github</a></span>
                         <span className="text-lg text-gray-500 hover:text-white"><a href='https://twitter.com/asofex' >twitter</a></span>
                     </div>
