@@ -1,12 +1,17 @@
 import { useRouter } from "next/router";
 import PostList from "../../components/posts/post-list"
 import { getPostByTopic } from "../../helpers/posts-utils";
+import { NextSeo } from 'next-seo';
 
 function Topics({ data }) {
     const router = useRouter();
     const { topicId } = router.query;
     return (
         <div className='my-4 '>
+            <NextSeo
+                title="Topics"
+                description="Topics related to programming blog posts"
+            />
             <PostList posts={data} heading={topicId} />
         </div>
     )

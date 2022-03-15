@@ -1,16 +1,21 @@
 
 import PostContent from '../../components/posts/post-content'
 import { getPostData, getPostsFiles } from '../../helpers/posts-utils'
+import { NextSeo } from 'next-seo';
 
 function SinglePost({ data }) {
     return (
         <>
+            <NextSeo
+                title={data.title}
+                description={data.excerpt}
+            />
             <PostContent postData={data} />
         </>
     )
 }
 
-export default SinglePost
+
 
 export const getStaticProps = (context) => {
     const { params } = context;
@@ -31,3 +36,5 @@ export const getStaticPaths = () => {
         fallback: false
     }
 }
+
+export default SinglePost
